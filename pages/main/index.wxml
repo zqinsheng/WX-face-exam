@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class='viewbigbig'>
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <view style='display: flex;flex-direction: row' class='view-123'>
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+
+          <view  bindtap='setTeacherInfo' class='weibiaoti3'></view>
+      </view>
+      <view style='display: flex;flex-direction: column' class='viewtext'>
+
+        <text class="userinfo-nickname" decode='{{true}}'>{{userInfo.nickName}}</text>
+
+        <text class='zi2'>{{phone}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!--123-->
+<view class='middle' scroll-x="true">
+  <view class='middle0'>
+    <view class='middle-2'>{{monthFaceCount}}</view>
+    <view class='middle-0'>本月核验人次</view>
+  </view>
+  <view class='middle0'>
+    <view class='middle-2'>{{successFaceCount}}</view>
+    <view class='middle-0'>成功刷脸</view>
+  </view>
+  <view class='middle0'>
+    <view class='middle-1'>{{failFaceCount}}</view>
+    <view class='middle-0'>异常刷脸</view>
+  </view>
+</view>
+<!--123-->
+<navigator url='../one/one'>
+  <view style='display: flex;flex-direction: row' class='text'>
+    <view class='text3'>
+      <view class='zidingyifenpeikaochang'></view>
+    </view>
+    <view class='text1'>待监考场次</view>
+    <view class='text5'>
+      <view class='text5-1'>{{readyExam}}</view>
+    </view>
+    <view class='text2'>
+      <image src='../../image/right.png' class='image2'></image>
+    </view>
+  </view>
+</navigator>
+<!--123-->
+<navigator url='../two/two'>
+  <view style='display: flex;flex-direction: row' class='text6'>
+    <view class='text3'>
+      <view class='iconn'></view>
+    </view>
+    <view class='text1'>已监考场次</view>
+    <view class='text4'>{{alreadyExam}}</view>
+    <view class='text2'>
+      <image src='../../image/right.png' class='image2'></image>
+    </view>
+  </view>
+</navigator>
+</view>

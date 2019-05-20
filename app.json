@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main/index",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "我的",
+    "navigationBarTextStyle": "white"
+  }
+}

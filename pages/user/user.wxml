@@ -1,0 +1,45 @@
+<!--pages/user/user.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="container">
+
+  <view class="userinfo">
+    <view class='lh'>
+      <view class='lyl'>
+        <image src='../images/777.jpg' class='cxk' />
+      </view>
+    </view>
+    <view class='wyf'>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+
+  <view class="usermotto">
+    <view style='display: flex;flex-direction: row' class='view-dig'>
+      <view class='images'>
+        <view class='images-1'></view>
+      </view>
+      <input name="teacherName" type="text" class="weui-search-bar__input" placeholder="输入教师姓名" placeholder-style='color:#E6E6E6;' value="{{SearchData.value}}"  />
+    </view>
+    <view style='display: flex;flex-direction: row' class='view-dig'>
+      <view class='images'>
+        <view class='images-2'></view>
+      </view>
+      <input name="teacherPhone" type="text" class="weui-search-bar__input" placeholder="输入手机号码" placeholder-style='color:#E6E6E6;' value="{{SearchData.value}}"  />
+    </view>
+    <view style='display: flex;flex-direction: row' class='view-dig'>
+      <view class='images-s'>
+        <view class='images-3'></view>
+      </view>
+      <input name="teacherNumber" type="text" class="weui-search-bar__input" placeholder="请输入教师工号" placeholder-style='color:#E6E6E6;' value="{{SearchData.value}}" />
+    </view>
+  </view>
+
+
+  <view class='view-zbj'>
+    <button formType="submit" class='zbj' >绑定号码</button>
+  </view>
+  
+</view>
+</form>
