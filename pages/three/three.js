@@ -74,9 +74,34 @@ Page({
     var tId = this.data.teacherId;
     console.log("=============teacherId=======" + tId);
     console.log('form发生了submit事件，携带数据为：', e.detail.value.teacherName);
+    console.log('form发生了submit事件，携带数据为：', e.detail.value.sex);
+    console.log('form发生了submit事件，携带数据为：', e.detail.value.age);
+    console.log('form发生了submit事件，携带数据为：', e.detail.value.phone);
+    console.log('form发生了submit事件，携带数据为：', e.detail.value.jobNumber);
+    console.log('form发生了submit事件，携带数据为：', e.detail.value.college);
+
 
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/updateTeacher/'+,
+      url: 'https://192.168.0.189:8888/api/ynavc/updateTeacher/' + tId + "/" + e.detail.value.teacherName + "/" + e.detail.value.sex + "/" + e.detail.value.age + "/" + e.detail.value.phone + "/" + e.detail.value.jobNumber + "/" + e.detail.value.college,
+      method:"POST",
+      success(res){
+          if(res.data==1){
+            wx.showToast({
+              title: '修改成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }else if(res.data==0){
+            wx.showModal({
+              title: '提示',
+              content: '修改失败！',
+              showCancel: false,
+              success: function (res) {
+
+              }
+            })
+          }
+      }
     })
   }
 

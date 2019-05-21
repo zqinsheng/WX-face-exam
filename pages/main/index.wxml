@@ -34,8 +34,8 @@
   </view>
 </view>
 <!--123-->
-<navigator url='../one/one'>
-  <view style='display: flex;flex-direction: row' class='text'>
+
+  <view catchtap='readyExam' style='display: flex;flex-direction: row' class='text'>
     <view class='text3'>
       <view class='zidingyifenpeikaochang'></view>
     </view>
@@ -47,10 +47,12 @@
       <image src='../../image/right.png' class='image2'></image>
     </view>
   </view>
-</navigator>
+
 <!--123-->
+<!-->
 <navigator url='../two/two'>
-  <view style='display: flex;flex-direction: row' class='text6'>
+<-->
+  <view catchtap='aleadyExam' style='display: flex;flex-direction: row' class='text6'>
     <view class='text3'>
       <view class='iconn'></view>
     </view>
@@ -60,5 +62,7 @@
       <image src='../../image/right.png' class='image2'></image>
     </view>
   </view>
+<!-->
 </navigator>
+<-->
 </view>

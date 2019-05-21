@@ -1,2 +1,30 @@
 <!--pages/face/face.wxml-->
-<text>pages/face/face.wxml</text>
+<view class='view'>
+  <camera device-position="back" flash="auto" binderror="error" style="width: 100%; height: 85%;" hidden='{{chidden}}'>
+    <cover-view class='coverimage'>
+
+      <cover-image class='coverimage-image' src='../../image/renlian.png'></cover-image>
+
+      <cover-view class='cover-text1' bindtap='bindViewTapllll'>
+        <!--<navigator bindtap="bindViewTapllll" hover-class="none" class='nav'>-->
+
+        <cover-image src='../images/left.png' class='image2'></cover-image>
+
+        <!--</navigator>-->
+      </cover-view>
+
+      <cover-view class='cover-text2'>请将人像对准圆内</cover-view>
+      <!--<cover-image class='coverimage-image-xiangjianniu' src='../../image/xiangjianniu.png'></cover-image>-->
+    </cover-view>
+  </camera>
+  <modal title="验证成功" hidden="{{modalHidden}}" bindconfirm="modalConfirm" no-cancel="false">
+    <icon type="success" size='160rpx' class='icon' showCancel="false"></icon>
+    <view class='modal-view'>张丽 畜牧兽医学院 102班</view>
+  </modal>
+  <modal title="验证失败" hidden="{{modalHidden2}}" bindconfirm="modalConfirm2" no-cancel="false">
+    <icon type="clear" color='red' size='160rpx' class='icon' showCancel="false"></icon>
+    <view class='modal-view'>需要人工审核</view>
+  </modal>
+  <image mode='widthFix' src='{{src}}' style='width:100%;' hidden='{{ihidden}}'></image>
+  <button class='button' bindtap='showtip' type='primary'>人脸确定提交</button>
+</view>

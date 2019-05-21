@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    modalHidden: true,
+    ihidden: true,
+    modalHidden2: true
   },
 
   /**
@@ -62,5 +64,47 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+* 显示弹窗
+*/
+  showtip: function () {
+    this.setData({
+      modalHidden: false,
+    })
+  },
+  /**
+  * 点击确认
+  */
+  modalConfirm: function () {
+    // do something
+    this.setData({
+      modalHidden: true,
+      chidden:false,
+      ihidden:true
+    })
+  },
+  showtip() {
+    const ctx = wx.createCameraContext()
+    ctx.takePhoto({
+      quality: 'high',
+      success: (res) => {
+        this.setData({
+          src: res.tempImagePath,
+          modalHidden: false,
+          chidden:true,
+          ihidden:false
+        })
+      }
+    })
+  },
+  error(e) {
+    console.log(e.detail)
+  },
+  bindViewTapllll: function (options) {
+    wx.navigateBack({
+
+    })
   }
+
 })

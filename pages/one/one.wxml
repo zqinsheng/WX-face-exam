@@ -1,2 +1,69 @@
-<!--pages/one/one.wxml-->
-<text>pages/one/one.wxml</text>
+<wxs module="util">
+
+    var sub = function(val) {
+
+        return val.substring(val.length-1, 4)
+
+    }
+
+    module.exports.sub = sub;
+
+</wxs>
+
+<view class='all'>
+  <view class='top'>
+    <view class='top-left'>
+      <!--open-type='switchTab'-->
+      <navigator bindtap="bindViewTapllll" hover-class="none">
+        <image src='../images/left-3.png'></image>
+      </navigator>
+    </view>
+    <view class='top-right'>待监考场次</view>
+  </view>
+
+  <scroll-view class='scrview' scroll-y="true">
+    <view class='session'>当前共计 {{examCount}}场</view>
+    <!--><navigator url='' hover-class="none"><-->
+      <!--链接界面-->
+      <view class='views'>
+        <block wx:for="{{examList}}">
+          <view class='container-text'>
+            <view class='icon2'>
+              <view class='time-icon1'></view>
+            </view>
+            <!--<image class='main-icon' src='../images/test-1.png' mode='aspectFit' />-->
+            <view class='view123' style='display: flex;flex-direction: row'>
+              <view class='title'>{{item.examInfo.examName}}</view>
+              <view class='number'>{{item.studentCount}}人</view>
+            </view>
+            <view class='container-adress' style='display: flex;flex-direction: row'>
+              <image class='adress-icon' src='../images/adress.png' mode='scaleToFill' />
+              <view class='adress'>{{item.examInfo.examRoomName}}</view>
+            </view>
+            <view class='container-time' style='display: flex;flex-direction: row'>
+              <!--<image class='time-icon' src='../images/time-1.png' mode='scaleToFill' />-->
+              <view class='icon1'>
+                <view class='time-icon'></view>
+              </view>
+              <view class='times'>{{item.examTime}}</view>
+            </view>
+            <view class='shuadig' style='display: flex;flex-direction: row'>
+              <navigator url='../face/face' hover-class="none">
+                <view class='shua' style='display: flex;flex-direction: row'>
+                  <view class="shexiang"></view>
+                  <view class='shualian'>刷脸</view>
+                </view>
+              </navigator>
+             <!--> <navigator url='../index2/index' hover-class="none"><-->
+                <view catchtap='viewDetails' data-examId='{{item.examInfo.id}}' class='xiang' style='display: flex;flex-direction: row'>
+                  <view class="xiangqing"></view>
+                  <view class='qing'>详情</view>
+                </view>
+              <!--</navigator><-->
+            </view>
+          </view>
+        </block>
+      </view>
+   <!--> </navigator><-->
+  </scroll-view>
+</view>

@@ -16,7 +16,7 @@
             <view class='image-1'></view>
           </view>
           <view class='name-1'>姓名</view>
-          <input name="tacherName" class='name-2' value='{{name}}'></input>
+          <input name="teacherName" class='name-2' value='{{name}}'></input>
         </view>
         <view class='sex'>
           <view class='container-image-2'>
@@ -24,10 +24,10 @@
           </view>
           <view class='sex-1'>性别</view>
           <view class='sex-2'>
-            <radio-group class="radio-group" bindchange="radioChange">
-              <view class='container-radio'>
-                <radio name="sex" class='radio' value='1' checked='{{gender==1?true:false}}'>男</radio>
-                <radio name="sex" class='radio' value='2' checked='{{gender==2?true:false}}'>女</radio>
+            <radio-group name="sex" class="radio-group" bindchange="radioChange">
+              <view  class='container-radio'>
+                <radio class='radio' value='1' checked='{{gender==1?true:false}}'>男</radio>
+                <radio class='radio' value='2' checked='{{gender==2?true:false}}'>女</radio>
               </view>
             </radio-group>
           </view>

@@ -1,2 +1,119 @@
-<!--pages/index2/index.wxml-->
-<text>pages/index2/index.wxml</text>
+<view class='beijing'>
+  <view class='top'>
+    <view class='top-left'>
+      <navigator  hover-class="none" bindtap="bindViewTapllll">
+        <image src='../images/left-3.png' style='width: 50rpx;height:50rpx;margin-top:6rpx;'/>
+      </navigator>
+    </view>
+    <view class='top-right'>{{examName}}</view>
+  </view>
+
+
+
+<view class="navbar"> 
+  <text wx:for="{{navbar}}"   data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.id}}<text class='lyl'>({{item.sz}})</text></text> 
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:500px" bindchange="tab_slide">
+    <swiper-item class='ccca'>
+     <view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="15"></icon>
+      <input type='text' bindinput='searchInput' class="weui-search-bar__input" placeholder="输入学生姓名" placeholder-style='color:#AFAFAF;' value="" />
+      <view class="weui-icon-clear" wx:if="{{SearchData.value.length > 0}}">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+    <view class="weui-search-bar__cancel-btn" bindtap='clickSearch' >
+         <text wx:if="{{SearchData.value.length>0}}" data-key='search'>搜索</text>
+         <text class='wyf' wx:else data-key='back'>搜索</text>
+    </view>
+</view>
+
+<!-->---------------------------------成功学生列表-----------------------------------<-->
+<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true'>
+<view  class='nzq'>
+<block wx:for="{{successStudent}}" wx:key="key">
+  <view data-stu='{{item.id}}' class='container' bindtap='showtip'>
+    <image class='tou' src='{{item.imageUrl}}'></image>
+    <view class='incontainer'>
+<image class='date' src='../images/right.png' ></image>
+      <text class='title'>{{item.personName}}</text>
+      
+      <image class='cxk' src='../images/time.png'></image>
+      <text class='content'>{{item.examTime}}</text>
+   
+    </view>
+  </view>
+</block>
+</view>
+</scroll-view>
+
+
+<modal title="该学生信息" no-cancel='true' hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class='you'>
+<view>
+<image class="image" src="../images/12345.jpg" mode='aspectFill'></image>
+</view>
+<view class='xinxi'>
+<view>姓名：{{studentInfo.personName}}</view>
+<view>学号：{{studentInfo.stuNumber}}</view>
+<view>班级：{{studentInfo.classesName}}</view>
+<view>身份证：{{studentInfo.idCard}}</view>
+</view>
+</modal>
+
+
+<!-->-------------------------------失败考生信息---------------------------------<-->
+    </swiper-item>
+    <swiper-item class='ccca'>
+     <view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="15"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="输入学生姓名" placeholder-style='color:#AFAFAF;' value="" bindinput='searchFailInput'  />
+      <view class="weui-icon-clear" wx:if="{{SearchData.value.length > 0}}">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+    <view bindtap='clickFailSearch' class="weui-search-bar__cancel-btn">
+         <text class='wyf'>搜索</text>
+    </view>
+</view>
+
+
+<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true'>
+<view class='nzq'>
+<block wx:for="{{failStudent}}" wx:key="key">
+  <view data-stu='{{item.id}}' class='container' bindtap='showtip'>
+    <image class='tou' src='{{item.imageUrl}}'></image>
+    <view class='incontainer'>
+<image class='date' src='../images/right.png' ></image>
+      <text class='title'>{{item.personName}}</text>
+      
+      <image class='cxk' src='../images/time.png'></image>
+      <text class='content'>{{item.examTime}}</text>
+   
+    </view>
+  </view>
+</block>
+</view>
+</scroll-view>
+
+<modal title="该学生信息" no-cancel='true' hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class='you'>
+<view>
+<image class="image" src="../images/12345.jpg" mode='aspectFill'></image>
+</view>
+<view class='xinxi'>
+<view>姓名：{{studentInfo.personName}}</view>
+<view>学号：{{studentInfo.stuNumber}}</view>
+<view>班级：{{studentInfo.classesName}}</view>
+<view>身份证：{{studentInfo.idCard}}</view>
+</view>
+</modal>
+    </swiper-item>
+  </swiper>
+
+</view>

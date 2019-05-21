@@ -93,7 +93,16 @@ Page({
     wx.navigateTo({
       url: '../three/three?teacherId=' + this.data.teacherId,
     })
+  },
+
+  readyExam:function(){
+    wx.navigateTo({
+      url: '../one/one?teacherId=' + this.data.teacherId,
+    })
+  },
+  aleadyExam:function(){
+    wx.navigateTo({
+      url: '../two/two?teacherId=' + this.data.teacherId,
+    })
   }
-
-
 })

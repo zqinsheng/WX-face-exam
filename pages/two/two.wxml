@@ -1,2 +1,49 @@
-<!--pages/two/two.wxml-->
-<text>pages/two/two.wxml</text>
+
+<view class='all'>
+  <view class='top'>
+    <view class='top-left'>
+    <!--open-type='switchTab'-->
+      <navigator bindtap="bindViewTapllll" hover-class="none">
+        <image src='../images/left-3.png'></image>
+      </navigator>
+    </view>
+    <view class='top-right'>已监考场次</view>
+  </view>
+
+  <scroll-view class='scrview' scroll-y="true">
+    <view class='session'>当前共计 {{examCount}}场</view>
+    <navigator url='../index2/index' hover-class="none" >
+    <view class='views'>
+      <block wx:for="{{examInfoList}}">
+        <view catchtap='viewDetails' data-examId='{{item.examInfo.id}}' class='container-text'>
+          <image class='main-icon' src='../images/test-2.png' mode='aspectFit' />
+          <view class='view123' style='display: flex;flex-direction: row'>
+          <view class='title'>{{item.examInfo.examName}}</view>
+          <view class='number'>{{item.examInfo.studentCount}}</view>
+          </view>
+          <view class='container-adress' style='display: flex;flex-direction: row'>
+            <image class='adress-icon' src='../images/adress.png' mode='scaleToFill' />
+            <view class='adress'>{{item.examInfo.examRoomName}}</view>
+          </view>
+          <view class='container-time' style='display: flex;flex-direction: row'>
+            <view class='icon1'>
+              <view class='time-icon'></view>
+            </view>
+            <!--<image class='time-icon' src='../images/time-1.png' mode='scaleToFill' />-->
+            <view class='times'>{{item.examTime}}</view>
+          </view>
+          <view class='buttom'>
+            <view class='pass'>通过：</view>
+            <view class='pass-num'>{{item.countSuccess}}</view>
+   <!-->    <view class='fail'>失败：</view>
+            <view class='fail-num'>{{item.failnum}}</view>
+            <-->
+            <view class='absent'>缺考：</view>
+            <view class='absent-num'>{{item.countFail}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    </navigator>
+  </scroll-view>
+</view>
