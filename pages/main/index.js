@@ -50,7 +50,13 @@ Page({
           //教师手机号
           phone: res.data.data.teacher.phone,
           //教师id
-          teacherId:res.data.data.teacher.id
+          teacherId:res.data.data.teacher.id,
+          //本月核检人次
+          monthFaceCount: res.data.data.total,
+          //成功刷脸
+          successFaceCount: res.data.data.seccessCount,
+          //异常人脸
+          failFaceCount: res.data.data.failCount
         })
       }
     })

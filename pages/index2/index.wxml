@@ -1,9 +1,9 @@
 <view class='beijing'>
   <view class='top'>
-    <view class='top-left'>
-      <navigator  hover-class="none" bindtap="bindViewTapllll">
+    <view class='top-left' bindtap="bindViewTapllll">
+      
         <image src='../images/left-3.png' style='width: 50rpx;height:50rpx;margin-top:6rpx;'/>
-      </navigator>
+
     </view>
     <view class='top-right'>{{examName}}</view>
   </view>
