@@ -156,10 +156,9 @@
   font-size: 60rpx;
   color: #fff;
   margin-left: 180rpx;
-  margin-top: 10%;
 }
 .weibiaoti3{
-  margin-top: 15%;
+  padding-top: 4%;
 }
 .zidingyifenpeikaochang::after{
   font-family: 'iconfont';
@@ -173,4 +172,8 @@
   content: '\e605';
   font-size: 55rpx;
   color: #11aa78;
+}
+
+.hiddenContent{
+  height: 26rpx;
 }

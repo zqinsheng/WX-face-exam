@@ -3,6 +3,7 @@ var app = getApp()
 Page({
 
   data: {
+    serverImg:app.globalData.serverImg,
     examId:0,
     navbar: [
       { id: '成功', sz: 32 },
@@ -27,7 +28,7 @@ Page({
     })
     var that = this;
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/findStudent/'+eId,
+      url: app.globalData.serverUrl+'/findStudent/'+eId,
       method:"POST",
       success(res){
         //console.log(res.data);
@@ -112,10 +113,10 @@ Page({
 //查看学生详细信息
   showtip: function (e) {
     var id = e.currentTarget.dataset.stu;
-    console.log('学生id0.0.0.0.0=' + id)
+   // console.log('学生id0.0.0.0.0=' + id)
     var that = this;
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/findOneStudent/'+id,
+      url: app.globalData.serverUrl+'/findOneStudent/'+id,
       method:"POST",
       success(res){
        // console.log(res.data);
@@ -148,12 +149,12 @@ Page({
       return;
     } else {
       wx.request({
-        url: 'https://192.168.0.189:8888/api/ynavc/searchFailStudent/' + that.data.examId + "/" + that.data.inputFailVal,
+        url: app.globalData.serverUrl+'/searchFailStudent/' + that.data.examId + "/" + that.data.inputFailVal,
         method: "POST",
         header: { 'content-type': 'application/x-www-form-urlencoded;charset=utf-8', },
         success(res) {
           if (res.data.data != null) {
-            console.log(res.data.data);
+            //console.log(res.data.data);
             that.setData({
               failStudent: res.data.data.failStudent
             })
@@ -191,12 +192,12 @@ Page({
       return;
     }else{
       wx.request({
-        url: 'https://192.168.0.189:8888/api/ynavc/searchSuccessStudent/' + that.data.examId + "/" + that.data.inputVal,
+        url: app.globalData.serverUrl+'/searchSuccessStudent/' + that.data.examId + "/" + that.data.inputVal,
         method: "POST",
         header: { 'content-type': 'application/x-www-form-urlencoded;charset=utf-8', },
         success(res) {
           if (res.data.data != null) {
-            console.log(res.data.data);
+            //console.log(res.data.data);
             that.setData({
               successStudent: res.data.data.successStudent
             })

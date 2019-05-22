@@ -1,5 +1,5 @@
 var util = require('../../utils/util.js');
-
+var app = getApp();
 Page({
   data: {
 
@@ -19,15 +19,15 @@ Page({
     var that = this;
     wx.request({
 
-      url: 'https://192.168.0.189:8888/api/ynavc/findReadyExam/'+tId,
+      url: app.globalData.serverUrl+'/findReadyExam/'+tId,
       method:"POST",
       success(res){
-          console.log(res.data);
+          //console.log(res.data);
           that.setData({
             examCount: res.data.data.examCount,
             examList:res.data.data.content,
-          }),
-            console.log(res.data.data.content[0].examInfo.endDate);
+          })
+            //console.log(res.data.data.content[0].examInfo.endDate);
 
       }
     })
@@ -47,9 +47,36 @@ Page({
   },
   viewDetails:function(e){
     var id = e.currentTarget.dataset.examid;
-    console.log('examid--------0.0.0.0.0=' + id)
+    //console.log('examid--------0.0.0.0.0=' + id)
     wx.navigateTo({
       url: '../index2/index?examId='+id
     })
+  },
+  goFace:function(e){
+    var eid = e.currentTarget.dataset.examid;
+    wx.request({
+      url: app.globalData.serverUrl+"/verifyExamTime/"+eid,
+      method:"POST",
+      success(res){
+        console.log(res.data);
+        //考试时间未到
+        if(res.data=="0"){
+          wx.showToast({
+            title: '考试前30分钟才可以刷脸',
+            icon: 'none',
+            duration: 3000
+          })
+          return;
+        }else if(res.data=="1"){
+          wx.navigateTo({
+            url: '../face/face?examId=' + eid
+          })
+        }
+      }
+
+    })
+
+  
   }
 })
+

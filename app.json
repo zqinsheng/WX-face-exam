@@ -5,7 +5,11 @@
     "pages/logs/logs",
     "pages/test/test",
     "pages/user/user",
-    "pages/one/one"
+    "pages/one/one",
+    "pages/face/face",
+    "pages/index2/index",
+    "pages/two/two",
+    "pages/three/three"
   ],
   "window": {
     "backgroundTextStyle": "light",

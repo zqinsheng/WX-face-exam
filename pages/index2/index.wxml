@@ -33,11 +33,11 @@
 </view>
 
 <!-->---------------------------------成功学生列表-----------------------------------<-->
-<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true'>
+<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true' enable-back-to-top>
 <view  class='nzq'>
 <block wx:for="{{successStudent}}" wx:key="key">
   <view data-stu='{{item.id}}' class='container' bindtap='showtip'>
-    <image class='tou' src='{{item.imageUrl}}'></image>
+    <image class='tou' src='{{serverImg}}{{item.imageUrl}}'></image>
     <view class='incontainer'>
 <image class='date' src='../images/right.png' ></image>
       <text class='title'>{{item.personName}}</text>
@@ -54,7 +54,7 @@
 
 <modal title="该学生信息" no-cancel='true' hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class='you'>
 <view>
-<image class="image" src="../images/12345.jpg" mode='aspectFill'></image>
+<image class="image" src="{{serverImg}}{{studentInfo.imageUrl}}" mode='widthFix'></image>
 </view>
 <view class='xinxi'>
 <view>姓名：{{studentInfo.personName}}</view>
@@ -63,10 +63,9 @@
 <view>身份证：{{studentInfo.idCard}}</view>
 </view>
 </modal>
-
-
-<!-->-------------------------------失败考生信息---------------------------------<-->
     </swiper-item>
+    
+    <!-->-------------------------------失败考生信息---------------------------------<-->
     <swiper-item class='ccca'>
      <view class="weui-search-bar">
    <view class="weui-search-bar__form">
@@ -84,11 +83,11 @@
 </view>
 
 
-<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true'>
+<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true' enable-back-to-top>
 <view class='nzq'>
 <block wx:for="{{failStudent}}" wx:key="key">
   <view data-stu='{{item.id}}' class='container' bindtap='showtip'>
-    <image class='tou' src='{{item.imageUrl}}'></image>
+    <image class='tou' src='{{serverImg}}{{item.imageUrl}}'></image>
     <view class='incontainer'>
 <image class='date' src='../images/right.png' ></image>
       <text class='title'>{{item.personName}}</text>
@@ -104,7 +103,7 @@
 
 <modal title="该学生信息" no-cancel='true' hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class='you'>
 <view>
-<image class="image" src="../images/12345.jpg" mode='aspectFill'></image>
+<image class="image" src="{{serverImg}}{{studentInfo.imageUrl}}" mode='widthFix'></image>
 </view>
 <view class='xinxi'>
 <view>姓名：{{studentInfo.personName}}</view>

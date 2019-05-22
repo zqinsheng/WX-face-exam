@@ -184,3 +184,8 @@
   font-size: 120rpx;
   color: blue;
 }
+
+.hiddenContent{
+  height: 60rpx;
+  background-color:#f5f5f5;
+}

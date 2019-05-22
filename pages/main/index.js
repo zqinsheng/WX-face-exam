@@ -29,24 +29,25 @@ Page({
       this.setData({
         openId: options.openId
       })
-    console.log("main-----index----->"+options.openId);
+    //console.log("main-----index----->"+options.openId);
     
     var that = this;
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/examCount/' +oId,
+      url: app.globalData.serverUrl+'/examCount/' +oId,
       method:"GET",
       success(res){
-        /*
-        console.log(res.data);
+       
+        //console.log(res.data);
+         /*
         console.log(res.data.data.content[0][0]);
         console.log(res.data.data.content[0][1]);
         console.log(res.data.data.content[1][0]);
         console.log(res.data.data.content[1][1]);*/
         that.setData({
           //待监考场次  考试状态为1
-          readyExam: res.data.data.content[1][1],
+          readyExam: res.data.data.readyExam,
           //已监考场次，考试状态为0
-          alreadyExam:res.data.data.content[0][1],
+          alreadyExam: res.data.data.alreadyExam,
           //教师手机号
           phone: res.data.data.teacher.phone,
           //教师id
@@ -88,7 +89,7 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
+    //console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

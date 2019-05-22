@@ -12,11 +12,11 @@
 
 <view class='all'>
   <view class='top'>
-    <view class='top-left'>
+    <view class='top-left'  bindtap="bindViewTapllll">
       <!--open-type='switchTab'-->
-      <navigator bindtap="bindViewTapllll" hover-class="none">
+
         <image src='../images/left-3.png'></image>
-      </navigator>
+
     </view>
     <view class='top-right'>待监考场次</view>
   </view>
@@ -48,12 +48,12 @@
               <view class='times'>{{item.examTime}}</view>
             </view>
             <view class='shuadig' style='display: flex;flex-direction: row'>
-              <navigator url='../face/face' hover-class="none">
-                <view class='shua' style='display: flex;flex-direction: row'>
+
+                <view data-examId='{{item.examInfo.id}}' catchtap='goFace' class='shua' style='display: flex;flex-direction: row'>
                   <view class="shexiang"></view>
                   <view class='shualian'>刷脸</view>
                 </view>
-              </navigator>
+
              <!--> <navigator url='../index2/index' hover-class="none"><-->
                 <view catchtap='viewDetails' data-examId='{{item.examInfo.id}}' class='xiang' style='display: flex;flex-direction: row'>
                   <view class="xiangqing"></view>
@@ -66,4 +66,5 @@
       </view>
    <!--> </navigator><-->
   </scroll-view>
+  <view class='hiddenContent'></view>
 </view>

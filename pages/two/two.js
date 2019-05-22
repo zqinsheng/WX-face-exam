@@ -1,5 +1,5 @@
 var util = require('../../utils/util.js');
-
+var app = getApp();
 Page({
   data: {
     teacherId:0,
@@ -41,17 +41,17 @@ Page({
   },
   onLoad: function (options) {
     var tId = options.teacherId;
-    console.log(tId);
+    //console.log(tId);
     this.setData({
       teacherId: options.teacherId
     })
 
     var that = this;
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/findAlreadyExam/' + tId,
+      url: app.globalData.serverUrl+'/findAlreadyExam/' + tId,
       method: "POST",
       success(res) {
-        console.log(res.data);
+        //console.log(res.data);
         that.setData({
           examCount: res.data.data.examCount,
           examInfoList:res.data.data.content
@@ -81,7 +81,7 @@ Page({
 
   viewDetails: function (e) {
     var id = e.currentTarget.dataset.examid;
-    console.log('examid--------0.0.0.0.0=' + id)
+    //console.log('examid--------0.0.0.0.0=' + id)
     wx.navigateTo({
       url: '../index2/index?examId=' + id
     })

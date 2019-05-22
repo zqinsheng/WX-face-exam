@@ -19,12 +19,12 @@
   </camera>
   <modal title="验证成功" hidden="{{modalHidden}}" bindconfirm="modalConfirm" no-cancel="false">
     <icon type="success" size='160rpx' class='icon' showCancel="false"></icon>
-    <view class='modal-view'>张丽 畜牧兽医学院 102班</view>
+    <view class='modal-view'>{{stuName}}:{{stuClasses}}</view>
   </modal>
   <modal title="验证失败" hidden="{{modalHidden2}}" bindconfirm="modalConfirm2" no-cancel="false">
     <icon type="clear" color='red' size='160rpx' class='icon' showCancel="false"></icon>
     <view class='modal-view'>需要人工审核</view>
   </modal>
-  <image mode='widthFix' src='{{src}}' style='width:100%;' hidden='{{ihidden}}'></image>
+  <image mode='widthFix' src='{{photo}}' style='width:100%;' hidden='{{ihidden}}'></image>
   <button class='button' bindtap='showtip' type='primary'>人脸确定提交</button>
 </view>

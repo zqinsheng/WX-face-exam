@@ -53,7 +53,7 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
+    //console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -73,8 +73,8 @@ Page({
   },*/
   formSubmit: function(e) {
     var oId = this.data.openId;
-    console.log("=============openId======="+oId);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.teacherNumber);
+   // console.log("=============openId======="+oId);
+   // console.log('form发生了submit事件，携带数据为：', e.detail.value.teacherNumber);
     var teacherName = e.detail.value.teacherName;
     var teacherPhone = e.detail.value.teacherPhone;
     var teacherNumber = e.detail.value.teacherNumber;
@@ -91,7 +91,7 @@ Page({
     } else {
       //检查输入的信息是否正确
       wx.request({
-        url: 'https://192.168.0.189:8888/api/ynavc/login/' + e.detail.value.teacherNumber,
+        url: app.globalData.serverUrl+'/login/' + e.detail.value.teacherNumber,
         method: "POST",
         header: {
           'content-type': 'application/json' // 默认值
@@ -118,7 +118,7 @@ Page({
 
               //绑定用户openId
               wx.request({
-                url: 'https://192.168.0.189:8888/api/ynavc/addTeacher/' + res.data.data.content.jobNumber + "/" + oId,
+                url: app.globalData.serverUrl+'/addTeacher/' + res.data.data.content.jobNumber + "/" + oId,
                 method: "POST",
                 header: {
                   'content-type': 'application/json' // 默认值

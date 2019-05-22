@@ -1,11 +1,11 @@
 
 <view class='all'>
   <view class='top'>
-    <view class='top-left'>
+    <view bindtap="bindViewTapllll" class='top-left'>
     <!--open-type='switchTab'-->
-      <navigator bindtap="bindViewTapllll" hover-class="none">
+
         <image src='../images/left-3.png'></image>
-      </navigator>
+
     </view>
     <view class='top-right'>已监考场次</view>
   </view>
@@ -46,4 +46,8 @@
     </view>
     </navigator>
   </scroll-view>
+
+  <view class='hiddenContent'>
+  
+  </view>
 </view>

@@ -1,5 +1,5 @@
 var util = require('../../utils/util.js');
-
+var app = getApp();
 Page({
   data: {
     arrayCollege: [
@@ -24,17 +24,17 @@ Page({
   },
 
   radioChange: function(e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+   // console.log('radio发生change事件，携带value值为：', e.detail.value)
   },
 
   onLoad: function(options) {
     var tId = options.teacherId;
     var that = this;
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/findTeacher/' + tId,
+      url: app.globalData.serverUrl +'/findTeacher/' + tId,
       method: "POST",
       success(res) {
-        console.log(res.data);
+        //console.log(res.data);
 
         var result = res.data.data.content;
         that.setData({
@@ -63,7 +63,7 @@ Page({
   },
   //选择学院  改变事件
   pickerChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    //console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: (e.detail.value)
     })
@@ -72,17 +72,17 @@ Page({
   //表单提交
   formSubmit: function (e) {
     var tId = this.data.teacherId;
-    console.log("=============teacherId=======" + tId);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.teacherName);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.sex);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.age);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.phone);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.jobNumber);
-    console.log('form发生了submit事件，携带数据为：', e.detail.value.college);
+   // console.log("=============teacherId=======" + tId);
+    //console.log('form发生了submit事件，携带数据为：', e.detail.value.teacherName);
+   // console.log('form发生了submit事件，携带数据为：', e.detail.value.sex);
+   // console.log('form发生了submit事件，携带数据为：', e.detail.value.age);
+   // console.log('form发生了submit事件，携带数据为：', e.detail.value.phone);
+   // console.log('form发生了submit事件，携带数据为：', e.detail.value.jobNumber);
+    //console.log('form发生了submit事件，携带数据为：', e.detail.value.college);
 
 
     wx.request({
-      url: 'https://192.168.0.189:8888/api/ynavc/updateTeacher/' + tId + "/" + e.detail.value.teacherName + "/" + e.detail.value.sex + "/" + e.detail.value.age + "/" + e.detail.value.phone + "/" + e.detail.value.jobNumber + "/" + e.detail.value.college,
+      url: app.globalData.serverUrl+'/updateTeacher/' + tId + "/" + e.detail.value.teacherName + "/" + e.detail.value.sex + "/" + e.detail.value.age + "/" + e.detail.value.phone + "/" + e.detail.value.jobNumber + "/" + e.detail.value.college,
       method:"POST",
       success(res){
           if(res.data==1){
