@@ -1,0 +1,68 @@
+.coverimage{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.coverimage-image{
+  height: 100%;
+  width: 100%;
+  
+}
+.view{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #090806;
+}
+.coverimage-image-xiangjianniu{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 5%;
+  margin-left: 40%;
+}
+
+.cover-text2{
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fefefe;
+  position: absolute;
+  top: 90%;
+}
+.button{
+  background-color: #11AA78;
+  width: 70%;
+  height: 8%;
+  margin-top: 7%;
+  color: #fefefe;
+  letter-spacing: 8rpx;
+  font-size: 45rpx;
+  text-align: center;
+  line-height: 250%;
+  font-family: 微软雅黑；
+}
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-view{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-text1{
+  width: 70rpx;
+  height: 70rpx;
+  text-align: center;
+  font-size: 25rpx;
+  color: #fefefe;
+  left: 5%;
+  position: absolute;
+  top: 7%;
+}
+.image2{
+  width: 100%;
+  height: 100%;
+}

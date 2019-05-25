@@ -9,6 +9,7 @@ Page({
     modalHidden: true,
     ihidden: true,
     modalHidden2: true,
+    chidden:false,
     stuName :"",
     stuClasses:""
   },
@@ -18,7 +19,7 @@ Page({
    */
   onLoad: function (options) {
     var exId = options.examId;
-    console.log(exId);
+    //console.log(exId);
     this.setData({
       examId: options.examId
     })
@@ -61,7 +62,7 @@ Page({
       success: (res) => {
         const tempFilePath = res.tempImagePath;
         that.setData({
-          photo:res.tempImagePath,
+          src: res.tempImagePath,
           ihidden:false
         })
         wx.showLoading({ //展示加载接口
@@ -91,19 +92,30 @@ Page({
                   var eId = that.data.examId;
                   var imageName = data.data.imgName;
                   var imageType = data.data.imgType
-                console.log(imageType);
+                  console.log(stuNumber);
+                  console.log(eId);
                   wx.request({
                     url: app.globalData.serverUrl +'/verifyStudent/'
                       + eId + '/' + stuNumber + '/' + imageName+"/"+imageType,
                     header: { "Content-Type": "application/x-www-form-urlencoded" },
                     method:"POST",
                     success(res){
+                      console.log("xuesheng---------------------dsfsddfs");
                       console.log(res.data);
-                      that.setData({
-                        stuName: res.data.data.content.personName,
-                        stuClasses: res.data.data.content.classesName,
-                        modalHidden: false,
-                    })
+                      //通过学号找到
+                      if(res.data.data.content!=null){
+                          that.setData({
+                            stuName: res.data.data.content.personName,
+                            stuClasses: res.data.data.content.classesName,
+                            modalHidden: false,
+                            chidden: true,
+                            ihidden: true
+                        })
+                      }else{
+                        that.setData({
+                          modalHidden2: false,
+                        })
+                      }
                     }
                   })
              

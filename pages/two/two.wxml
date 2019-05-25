@@ -35,9 +35,9 @@
           <view class='buttom'>
             <view class='pass'>通过：</view>
             <view class='pass-num'>{{item.countSuccess}}</view>
-   <!-->    <view class='fail'>失败：</view>
-            <view class='fail-num'>{{item.failnum}}</view>
-            <-->
+            <view class='fail'></view>
+            <view class='fail-num'></view>
+
             <view class='absent'>缺考：</view>
             <view class='absent-num'>{{item.countFail}}</view>
           </view>

@@ -9,11 +9,12 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
-	"appid": "wx17eaf396f39ac9a2",
+	"appid": "wxd777ef7694ed2fb1",
 	"projectname": "weixin-face-exam",
 	"debugOptions": {
 		"hidedInDevtools": []

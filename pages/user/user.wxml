@@ -18,7 +18,7 @@
   <view class="usermotto">
     <view style='display: flex;flex-direction: row' class='view-dig'>
       <view class='images'>
-        <view class='images-1'></view>
+        <view class='iconfont icon-gerenzhongxinxia' style='font-size: 55rpx; color: #C7C7C7'></view>
       </view>
       <input name="teacherName" type="text" class="weui-search-bar__input" placeholder="输入教师姓名" placeholder-style='color:#E6E6E6;' value="{{SearchData.value}}"  />
     </view>

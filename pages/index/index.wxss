@@ -1,18 +1,32 @@
 /**index.wxss**/
-
+/*
 .container{
+  
    background-color: #019B4D;
+    height: 100%;
+    padding: 0 0;
+}
+*/
+
+.body-mian{
+  background-color: #019B4D;
+   position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
 }
 
 .body-logo{
-
+  margin-top: 20%;
 }
 
-.body-font2{
-  margin-bottom: 150rpx;
-}
 
 .body-text{
+  margin-top: 20%;
+  height: 300rpx;
   text-align: center;
   font-size: 30rpx;
   font-family: 微软雅黑;

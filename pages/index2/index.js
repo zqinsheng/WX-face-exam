@@ -7,7 +7,7 @@ Page({
     examId:0,
     navbar: [
       { id: '成功', sz: 32 },
-      { id: '待入场', sz: 8 }
+      { id: '缺考', sz: 8 }
     ],
     modalHidden: true,
     countSuccess: 0,

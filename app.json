@@ -9,12 +9,13 @@
     "pages/face/face",
     "pages/index2/index",
     "pages/two/two",
-    "pages/three/three"
+    "pages/three/three",
+    "pages/camera/face"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "我的",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "white"
   }
 }

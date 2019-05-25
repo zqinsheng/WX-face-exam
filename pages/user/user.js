@@ -19,6 +19,10 @@ Page({
 
   },
   onLoad: function(options) {
+    wx.setNavigationBarTitle({
+      title: '我的'
+    }) 
+
     this.setData({
       openId: options.openId
 
@@ -81,7 +85,7 @@ Page({
 
     if (teacherName == "" || teacherPhone == "" || teacherNumber == "") {
       wx.showModal({
-        title: '提示',
+        title: '提 示',
         content: '请输入完整信息！',
         showCancel: false,
         success: function(res) {
@@ -99,7 +103,7 @@ Page({
         success(res) {
           if (res.data.data == null) {
             wx.showModal({
-              title: '提示',
+              title: '提 示',
               content: '绑定失败，请核对信息！',
               showCancel: false,
               success(res) {
@@ -138,7 +142,7 @@ Page({
 
                   } else {
                     wx.showModal({
-                      title: '提示',
+                      title: '提 示',
                       content: '绑定失败，请核对信息！',
                       showCancel: false,
                       success(res) {

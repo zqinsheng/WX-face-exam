@@ -1,3 +1,4 @@
+
 <view class='beijing'>
   <view class='top'>
     <view class='top-left' bindtap="bindViewTapllll">
@@ -14,8 +15,9 @@
   <text wx:for="{{navbar}}"   data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.id}}<text class='lyl'>({{item.sz}})</text></text> 
 </view>
 
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:500px" bindchange="tab_slide">
-    <swiper-item class='ccca'>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:88%" bindchange="tab_slide">
+    <swiper-item class='ccca'> 
      <view class="weui-search-bar">
    <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
@@ -32,8 +34,9 @@
     </view>
 </view>
 
+
 <!-->---------------------------------成功学生列表-----------------------------------<-->
-<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true' enable-back-to-top>
+<scroll-view class='scrview' scroll-y="true"  enable-back-to-top>
 <view  class='nzq'>
 <block wx:for="{{successStudent}}" wx:key="key">
   <view data-stu='{{item.id}}' class='container' bindtap='showtip'>
@@ -52,6 +55,7 @@
 </scroll-view>
 
 
+
 <modal title="该学生信息" no-cancel='true' hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class='you'>
 <view>
 <image class="image" src="{{serverImg}}{{studentInfo.imageUrl}}" mode='widthFix'></image>
@@ -66,7 +70,7 @@
     </swiper-item>
     
     <!-->-------------------------------失败考生信息---------------------------------<-->
-    <swiper-item class='ccca'>
+    <swiper-item class='ccca' style="width:88%">
      <view class="weui-search-bar">
    <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
@@ -82,8 +86,7 @@
     </view>
 </view>
 
-
-<scroll-view class='scrview' scroll-y="true" scroll-with-animation='true' enable-back-to-top>
+<scroll-view class='scrview' scroll-y="true" enable-back-to-top>
 <view class='nzq'>
 <block wx:for="{{failStudent}}" wx:key="key">
   <view data-stu='{{item.id}}' class='container' bindtap='showtip'>

@@ -58,7 +58,7 @@ Page({
       url: app.globalData.serverUrl+"/verifyExamTime/"+eid,
       method:"POST",
       success(res){
-        console.log(res.data);
+        //console.log(res.data);
         //考试时间未到
         if(res.data=="0"){
           wx.showToast({
@@ -68,8 +68,9 @@ Page({
           })
           return;
         }else if(res.data=="1"){
+         
           wx.navigateTo({
-            url: '../face/face?examId=' + eid
+            url: '../camera/face?examId=' + eid
           })
         }
       }

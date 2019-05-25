@@ -17,8 +17,8 @@ App({
         if (res.code) {
           //发起网络请求,通过code换取openId，通过openId查询教师信息
           wx.request({
-            //url: 'https://app.yunyitx.com:8888/api/wx/session/' + res.code,
-            url: 'http://192.168.0.189:8888/api/wx/session/' + res.code,
+            url: 'https://app.yunyitx.com:8888/api/wx/session/' + res.code,
+            //url: 'https://192.168.0.189:8888/api/wx/session/' + res.code,
             data: {
               //code: res.code
             },
@@ -27,7 +27,7 @@ App({
               'content-type': 'application/json' // 默认值
             },
             success(res) {
-              //console.log(res.data);
+              console.log(res.data);
               //console.log("app.js----->"+res.data.data.content.openId);
 
               //没有绑定教师信息
@@ -74,8 +74,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    //serverUrl:"https://app.yunyitx.com:8888/api/ynavc"
-    serverUrl: "http://192.168.0.189:8888/api/ynavc",
-    serverImg: "http://192.168.0.189:8888/"
+    serverUrl:"https://app.yunyitx.com:8888/api/ynavc",
+    serverImg: "https://app.yunyitx.com:8888/"
+    //serverUrl: "https://192.168.0.189:8888/api/ynavc",
+    //serverImg: "https://192.168.0.189:8888/"
   }
 })

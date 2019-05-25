@@ -92,6 +92,11 @@ width: 100%;
   font-size: 55rpx;
   color: #C7C7C7;
 }
+
+.images-1{
+    font-size: 55rpx;
+  color: #C7C7C7;
+}
 .images-2::after{
   font-family: 'iconfont';
   content: '\e667';
